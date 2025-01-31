@@ -1,0 +1,25 @@
+/* home.component.scss */
+.circle-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: yellow;
+  margin: 10px auto 0;
+}
+
+.icon-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.icon-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.section-text {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-top: 30px;
+}

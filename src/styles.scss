@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+// Bootstrap inports
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+@import "./assets/styles/styles.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $font-primary !important;
+}

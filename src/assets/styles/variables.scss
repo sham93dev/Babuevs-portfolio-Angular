@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// Use of Poppins font
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Roboto", sans-serif;
+
+$font-size-base: 1rem !default;
+
+$h1-font-size: $font-size-base * 3.75 !default; // 52
+$h2-font-size: $font-size-base * 2.625 !default; // 30
+$h3-font-size: $font-size-base * 1.375 !default; // 22
+$h4-font-size: $font-size-base * 1.125 !default; // 18
+$h5-font-size: $font-size-base !default; // 16
+$h6-font-size: $font-size-base !default; // 16
+
+$custom-large-font-size: 5.6rem;
+
+// Colors
+$color-primary-black: #262626;
+$color-primary-orange: #fab600;
+$color-primary-blue: #119abf;
+$color-primary-light-gray: #f4f2ec;
+$color-primary-gray: #efefef;
+$color-primary-green: #9cb09e;
+$color-primary-green-200: #68776a;

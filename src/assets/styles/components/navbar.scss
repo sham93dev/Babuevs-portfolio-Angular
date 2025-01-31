@@ -1,0 +1,17 @@
+.navbar {
+  background-color: $color-primary-light-gray;
+
+  .navbar-brand {
+    text-transform: uppercase;
+    font-size: $h2-font-size;
+    font-family: $font-secondary;
+    margin-left: 2.4rem;
+  }
+  a {
+    color: $color-primary-black;
+
+    &:hover {
+      color: $color-primary-orange;
+    }
+  }
+}

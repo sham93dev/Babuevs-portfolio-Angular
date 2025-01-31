@@ -1,0 +1,45 @@
+@import "../../../../assets/styles/variables";
+
+.container-fluid {
+  .clients-small-box {
+    background-color: #fab600;
+    height: 140px;
+    width: 86%;
+    margin: -58px;
+    bottom: 0;
+    z-index: -2;
+  }
+
+  .headings-wrapper {
+    margin-left: 3.7rem;
+    margin-top: -6rem;
+
+    h3 {
+      font-size: $custom-large-font-size;
+    }
+
+    h2 {
+      font-size: 7.5rem;
+    }
+  }
+
+  .clients-big-box {
+    background-color: #262626;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .clients-images {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-bottom: 10rem;
+
+      img {
+        height: 150px;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import "../../../../assets/styles/variables";
+
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+  min-height: 95vh;
+  .education {
+    background-image: url("../../../../assets/img/education-background.png");
+    background-color: #efefef;
+    min-height: 50vh;
+    flex: 1 1;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-attachment: fixed;
+    height: auto;
+    width: auto;
+  }
+
+  .container {
+    margin-top: -93px;
+    background-color: #119abf;
+    flex: 1 1;
+
+    h1 {
+      font-size: $custom-large-font-size;
+    }
+    .education-wrapper {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 100%;
+        width: 170px;
+        padding: 25px;
+      }
+
+      .education-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}

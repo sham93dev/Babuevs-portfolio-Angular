@@ -1,0 +1,109 @@
+@import "../../../../assets/styles/variables";
+
+h1 {
+  font-size: $h1-font-size;
+  font-family: $font-primary;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h4 {
+  color: $color-primary-green-200;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  padding: 5rem;
+}
+
+.hero-shape {
+  left: -4rem;
+  top: 10rem;
+  z-index: 2;
+  position: absolute;
+  height: auto;
+  width: 544px;
+}
+
+.bg-custom {
+  background-color: #fafafa;
+}
+
+.btn-bg-custom {
+  background-color: $color-primary-green !important;
+}
+
+body {
+  background: #000;
+}
+
+.background-shape {
+  left: 3rem;
+  top: 14rem;
+  z-index: 2;
+  background: $color-primary-light-gray;
+  width: 450px;
+  height: 400px;
+  animation: morph 6s linear infinite;
+  position: absolute;
+  right: 0;
+}
+
+.background-shape img {
+  width: 100%;
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+  }
+}
+
+/* Ekstra stiler for tekstanimasjon */
+.text-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.text-container .animate-text:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.text-container .animate-text:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.text-container .animate-text:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.text-container .animate-text:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.text-container .animate-text:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
