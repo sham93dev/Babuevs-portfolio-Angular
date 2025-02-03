@@ -1,47 +1,53 @@
-<!-- navbar.component.html -->
 <nav
   class="navbar navbar-expand-lg navbar-light"
   [ngClass]="{ 'navbar-dark': isDarkMode, 'bg-dark': isDarkMode }"
 >
-  <a class="navbar-brand" href="#">Babuevs</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Prosjekter</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#education">Utdanning</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#services">Tjenester</a>
-      </li>
-      <!-- Dark Mode Switch -->
-      <li class="nav-item mt-1 px-3">
-        <input
-          type="checkbox"
-          id="darkModeToggle"
-          [checked]="isDarkMode"
-          (change)="toggleDarkMode()"
-          class="form-check-input"
-        />
-        <label for="darkModeToggle" class="dark-mode-switch">
-          <i class="fas" [ngClass]="isDarkMode ? 'fa-moon' : 'fa-sun'"></i>
-        </label>
-      </li>
-    </ul>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Babuevs</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Navigasjonslenker til venstre -->
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Prosjekter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education">Utdanning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Tjenester</a>
+        </li>
+      </ul>
+
+      <!-- Dark Mode Switch til høyre -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item mt-1 px-3">
+          <input
+            type="checkbox"
+            id="darkModeToggle"
+            [checked]="isDarkMode"
+            (change)="toggleDarkMode()"
+            class="form-check-input"
+          />
+          <label for="darkModeToggle" class="dark-mode-switch">
+            <i class="fas" [ngClass]="isDarkMode ? 'fa-moon' : 'fa-sun'"></i>
+          </label>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

@@ -9,50 +9,87 @@ h1 {
 }
 
 h4 {
-  color: $color-primary-green-200;
+  color: $color-primary-orange;
+}
+
+.min-vh {
+  min-height: 75vh;
+}
+
+.cv-btn {
+  width: 40%;
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
-  padding: 5rem;
+  padding: 3rem;
 }
 
-.hero-shape {
-  left: -4rem;
-  top: 10rem;
-  z-index: 2;
-  position: absolute;
-  height: auto;
-  width: 544px;
-}
-
-.bg-custom {
-  background-color: #fafafa;
-}
-
-.btn-bg-custom {
-  background-color: $color-primary-green !important;
-}
-
-body {
-  background: #000;
+.image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .background-shape {
-  left: 3rem;
-  top: 14rem;
-  z-index: 2;
-  background: $color-primary-light-gray;
-  width: 450px;
-  height: 400px;
-  animation: morph 6s linear infinite;
   position: absolute;
-  right: 0;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -63%);
+  background: #f4f2ec;
+  width: 78%;
+  max-width: 78%;
+  height: auto;
+  aspect-ratio: 1.1;
+  z-index: -1;
+  animation: morph 6s linear infinite;
+  border-radius: 50%;
 }
 
-.background-shape img {
-  width: 100%;
+@media (max-width: 992px) {
+  .background-shape {
+    display: none;
+  }
+
+  .cv-btn {
+    width: auto;
+  }
+}
+
+.d-flex.gap-2 {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+
+  .text-container {
+    text-align: center;
+  }
+
+  .d-flex {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  .img-fluid {
+    max-width: 350px;
+    padding: 0;
+    margin-top: 3rem;
+  }
 }
 
 @keyframes morph {
@@ -65,45 +102,5 @@ body {
   }
   67% {
     border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-  }
-}
-
-/* Ekstra stiler for tekstanimasjon */
-.text-container {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-.animate-text {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-.text-container .animate-text:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.text-container .animate-text:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.text-container .animate-text:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.text-container .animate-text:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.text-container .animate-text:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
