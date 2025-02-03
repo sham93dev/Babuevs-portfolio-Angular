@@ -24,7 +24,7 @@ export class ProjectsComponent implements OnInit {
       subtitle: 'Nettside',
       description: 'Nettside for selskapet Intellitech og deres tjenester',
       icons: ['path/to/icon1.png', 'path/to/icon2.png', 'path/to/icon3.png'],
-      link: '#',
+      link: 'https://intellitech.no',
     },
     {
       image: './assets/portfolio/wtclogo.png',
@@ -32,7 +32,7 @@ export class ProjectsComponent implements OnInit {
       subtitle: 'Min Side',
       description: 'Description for project 3.',
       icons: ['path/to/icon1.png', 'path/to/icon2.png', 'path/to/icon3.png'],
-      link: '#',
+      link: 'https://minesider.watercircles.no/',
     },
     {
       image: './assets/portfolio/if-prototype.jpg',
