@@ -1,71 +1,76 @@
-/* Dark Mode Switch Container */
 .dark-mode-switch {
-  width: 60px; /* Størrelse på switchen */
-  height: 30px; /* Høyde på switchen */
+  width: 60px;
+  height: 30px;
   position: relative;
   display: inline-block;
-  background-color: #ddd; /* Lys grå bakgrunn som standard */
-  border-radius: 30px; /* Rund kant på containeren */
+  background-color: #ddd;
+  border-radius: 30px;
   box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.1),
     inset 0px -5px 15px rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Den lille sirkelen (den som flyttes) */
-.dark-mode-switch::after {
+.dark-mode-switch::before {
   content: "";
-  width: 22px; /* Mindre sirkulær knapp */
-  height: 22px; /* Mindre sirkulær knapp */
   position: absolute;
-  top: 4px; /* Juster avstanden fra toppen */
-  left: 4px; /* Juster avstanden fra venstre */
-  background-color: #fff; /* Hvit farge på den lille sirkelen */
-  border-radius: 50%; /* Gjør den rund */
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #ffcc00;
+  transition: color 0.3s ease;
+}
+
+.dark-mode-switch::after {
+  content: "🌙";
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.dark-mode-switch span {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: #fff;
+  border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 22px;
+  font-size: 11px;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Når checkboxen er sjekket (dark mode aktivert) */
+.dark-mode-switch span::before {
+  content: "☀️";
+  display: block;
+  text-align: center;
+  font-size: 11px;
+}
+
 input:checked + label {
-  background-color: #3a3a3a; /* Mørkere bakgrunn når dark mode er aktivert */
+  background-color: #3a3a3a;
 }
 
-/* Når checkboxen er sjekket (flytt den lille knappen til høyre og endre farge på sirkelen) */
-input:checked + label::after {
-  transform: translateX(30px); /* Flytter knappen til høyre */
-  background-color: #ffcc00; /* Gul bakgrunn når dark mode er aktivert */
+input:checked + label span {
+  transform: translateX(30px);
+  background-color: #24afef;
 }
 
-/* Når checkboxen ikke er sjekket (dark mode av) */
-input:not(:checked) + label::after {
-  background-color: #ddd; /* Grå bakgrunn når dark mode er av */
+input:checked + label span::before {
+  content: "🌙";
 }
 
-/* Gjør input unsynlig */
 input {
   width: 0;
   height: 0;
   visibility: hidden;
-}
-
-/* Stil for sol- og måne-ikonene */
-label i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px; /* Juster størrelsen på ikonene */
-  color: #333; /* Standard farge for måne-ikonet (dark mode) */
-  transition: color 0.3s ease;
-}
-
-/* Når checkboxen er sjekket (bytt til måne-ikon i mørk modus) */
-input:checked + label i {
-  color: #fff; /* Hvit farge på måne-ikonet når dark mode er aktivert */
-}
-
-/* Når checkboxen ikke er sjekket (vis sol-ikon i lys modus) */
-input:not(:checked) + label i {
-  color: #ffcc00; /* Gul farge på sol-ikonet når dark mode er av */
 }
