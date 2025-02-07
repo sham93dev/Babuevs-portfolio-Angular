@@ -8,10 +8,20 @@ h1 {
   font-size: $custom-large-font-size;
 }
 
+.carousel {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
 .card {
   position: relative;
   overflow: hidden;
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .card-img-container {
@@ -20,7 +30,7 @@ h1 {
 
 .card-img-container img {
   width: 100%;
-  height: 270px;
+  height: 377px;
   object-fit: cover;
 }
 
@@ -45,24 +55,62 @@ h1 {
 }
 
 .icon-img {
-  width: 20px;
-  max-height: 272px;
-  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+  margin: 5px;
 }
 
-.btn-dark {
-  background-color: #000;
-  color: #fff;
+/* Indikatorene (punktene) */
+.carousel-indicators {
+  bottom: -40px;
+}
+
+.carousel-indicators button {
+  background-color: #bbb;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   border: none;
+  margin: 3px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-dark:hover {
+.carousel-indicators .active {
   background-color: #333;
-  color: #fff;
 }
 
-.large-padding {
-  padding-bottom: 7rem;
+/* Piler på kanten av ytterste kort */
+.custom-carousel-prev,
+.custom-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
 }
 
-// Shape devider
+.custom-carousel-prev {
+  left: -80px;
+}
+
+.custom-carousel-next {
+  right: -80px;
+}
+
+.custom-carousel-prev:hover,
+.custom-carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
