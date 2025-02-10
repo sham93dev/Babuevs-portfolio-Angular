@@ -1,25 +1,95 @@
-/* home.component.scss */
-.circle-dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: yellow;
-  margin: 10px auto 0;
+.stats-section {
+  height: 70vh;
+  background: #262626;
+  color: white;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .icon-container {
-  text-align: center;
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Sikrer at ikonene justeres på små skjermer */
+  gap: 20px; /* Gir litt avstand mellom ikonene */
+  margin-bottom: 20px;
 }
 
-.icon-container img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+.icon {
+  font-size: clamp(
+    2rem,
+    4vw,
+    3rem
+  ); /* Dynamisk størrelse basert på skjermbredde */
+  color: white;
+  animation: zoomInOut 10s ease-in-out infinite;
 }
 
-.section-text {
-  text-align: center;
-  font-size: 1.25rem;
-  margin-top: 30px;
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* Lag en myk zoom inn og ut animasjon */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  } /* Zoom inn */
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  } /* Tilbake til normal størrelse */
+}
+
+/* Forskjellig animasjonsforsinkelse for hvert ikon */
+.icon:nth-child(1) {
+  animation-delay: 0s;
+}
+.icon:nth-child(2) {
+  animation-delay: 2s;
+}
+.icon:nth-child(3) {
+  animation-delay: 3s;
+}
+.icon:nth-child(4) {
+  animation-delay: 3.5s;
+}
+
+/* Tekstjustering for responsivitet */
+.fs-5 {
+  font-size: clamp(1rem, 2vw, 1.25rem); /* Dynamisk tekststørrelse */
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Enkel animasjon for overskrift */
+#animated-title {
+  font-size: clamp(2rem, 5vw, 5rem); /* Dynamisk størrelse */
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#animated-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsivt: Sentraliserer tekst og justerer ikoner på mindre skjermer */
+@media (max-width: 992px) {
+  .text-lg-start {
+    text-align: center !important;
+  }
+
+  .icon-container {
+    justify-content: center;
+    gap: 15px; /* Mindre mellomrom på små skjermer */
+  }
 }

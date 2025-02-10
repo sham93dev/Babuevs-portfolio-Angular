@@ -2,12 +2,12 @@
 
 .container-fluid {
   .clients-small-box {
-    background-color: $color-primary-green-100;
+    background: $gradient-green-black;
     height: 140px;
-    width: 86%;
     margin: -58px;
     bottom: 0;
     z-index: -2;
+    width: 87%;
   }
 
   .headings-wrapper {
