@@ -12,11 +12,11 @@ export class EducationComponent implements OnInit {
   sectionTitle: string = 'Utdanning';
   educationList = [
     {
-      logo: '../../../../assets/img/education/galogo.png',
+      logo: '../../../../assets/img/education/gokstad-logo_black.png',
       altText: 'gokstad akademiet logo',
       schoolName: 'Gokstad Akademiet',
       program: 'Backend-utvikling',
-      duration: '07.21 - Nåværende',
+      duration: '08.2023 - Nåværende',
     },
     {
       logo: '../../../../assets/img/education/logonoroff.png',

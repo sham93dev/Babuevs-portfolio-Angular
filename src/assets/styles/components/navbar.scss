@@ -1,5 +1,5 @@
 .navbar {
-  background-color: $color-primary-light-gray;
+  background-color: $light-mode-gray-100;
 
   .navbar-brand {
     text-transform: uppercase;
@@ -11,7 +11,7 @@
     color: $color-primary-black;
 
     &:hover {
-      color: $color-primary-orange;
+      color: $light-mode-cta-green-color-100;
     }
   }
 }

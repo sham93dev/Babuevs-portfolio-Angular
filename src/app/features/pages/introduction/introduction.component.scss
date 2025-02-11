@@ -18,6 +18,12 @@ h4 {
 
 .cv-btn {
   width: 40%;
+  background: $light-mode-cta-green-color-100;
+  border: none;
+
+  &:hover {
+    background: #93a999d1;
+  }
 }
 
 .img-fluid {
@@ -37,7 +43,7 @@ h4 {
   top: 63%;
   left: 50%;
   transform: translate(-50%, -63%);
-  background: $color-primary-light-gray;
+  background: $light-mode-gray-100;
   width: 78%;
   max-width: 78%;
   height: auto;

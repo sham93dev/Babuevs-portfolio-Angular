@@ -1,7 +1,9 @@
+@import "../../../../assets/styles/variables";
+
 .stats-section {
   height: 70vh;
-  background: #262626;
-  color: white;
+  background: $light-mode-green-100;
+  color: $light-mode-text-black-100;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -13,17 +15,17 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Sikrer at ikonene justeres på små skjermer */
-  gap: 20px; /* Gir litt avstand mellom ikonene */
+  gap: 5rem; /* Gir litt avstand mellom ikonene */
   margin-bottom: 20px;
 }
 
 .icon {
   font-size: clamp(
-    2rem,
-    4vw,
-    3rem
+    1rem,
+    2vw,
+    2rem
   ); /* Dynamisk størrelse basert på skjermbredde */
-  color: white;
+  color: $light-mode-cta-green-color-100;
   animation: zoomInOut 10s ease-in-out infinite;
 }
 

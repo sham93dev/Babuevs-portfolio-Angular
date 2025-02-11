@@ -3,7 +3,7 @@
   [ngClass]="{ 'navbar-dark': isDarkMode, 'bg-dark': isDarkMode }"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Babuevs</a>
+    <a class="navbar-brand" href="#home">Babuevs</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -33,7 +33,13 @@
       </ul>
 
       <!-- Dark Mode Switch til høyre -->
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <a
+          href="https://www.linkedin.com/in/shamil-babujev-1140b7191/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin fa-lg footer-btns__linkedin"></i>
+        </a>
         <li class="nav-item mt-1 px-3">
           <input
             type="checkbox"
