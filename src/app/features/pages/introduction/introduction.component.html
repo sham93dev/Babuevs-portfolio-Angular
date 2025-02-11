@@ -13,8 +13,12 @@
         ferdigheter og vokse som utvikler.
       </p>
       <div class="d-flex gap-2 justify-content-md-start justify-content-center">
-        <button class="btn btn-dark animate-text cv-btn">Last ned CV</button>
-        <button class="btn btn-outline-dark animate-text">Kontakt meg</button>
+        <button class="btn btn-dark animate-text cv-btn" (click)="downloadCV()">
+          Last ned CV
+        </button>
+        <button class="btn btn-outline-dark animate-text" (click)="sendEmail()">
+          Kontakt meg
+        </button>
       </div>
     </div>
     <!-- Bilde + bakgrunnsform (Vises først på mobil) -->

@@ -1,0 +1,13 @@
+@import "../../../assets/styles/variables";
+
+footer {
+  background-color: $light-mode-black-100;
+
+  .footer-btns__linkedin {
+    color: #51a4f9;
+  }
+
+  .footer-btns__github {
+    color: #754dea;
+  }
+}

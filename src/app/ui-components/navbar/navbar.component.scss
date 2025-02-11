@@ -74,3 +74,10 @@ input {
   height: 0;
   visibility: hidden;
 }
+
+.footer-btns__linkedin {
+  color: #0b65c2;
+  &:hover {
+    color: #074b8e;
+  }
+}

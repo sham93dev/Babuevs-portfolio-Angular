@@ -1,20 +1,26 @@
-<!-- home.component.html -->
-<div class="container py-5">
-  <!-- Overskrift -->
-  <div class="text-center mb-4">
-    <h2>Hva kan jeg hjelpe deg med?</h2>
-  </div>
+<div class="stats-section d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Venstre seksjon -->
+      <div class="col-lg-6 text-lg-start text-center">
+        <h2 id="animated-title" class="fw-bold">Hva kan jeg hjelpe deg med?</h2>
+      </div>
 
-  <!-- Tekstseksjon -->
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <p>
-        Som utvikler med erfaring innen front-end utvikling og UX-design, kan
-        jeg hjelpe deg med å lage moderne og brukervennlige nettsider og
-        applikasjoner. Med pågående studier i backend-utvikling har jeg en
-        helhetlig forståelse av hvordan tekniske løsninger fungerer på tvers av
-        plattformer.
-      </p>
+      <!-- Høyre seksjon -->
+      <div class="col-lg-6 text-center">
+        <div class="icon-container">
+          <fa-icon [icon]="faCode" class="icon"></fa-icon>
+          <fa-icon [icon]="faPaintBrush" class="icon"></fa-icon>
+          <fa-icon [icon]="faBullhorn" class="icon"></fa-icon>
+          <fa-icon [icon]="faLightbulb" class="icon"></fa-icon>
+        </div>
+        <p class="fs-5 mt-4 ls-custom">
+          Jeg tilbyr <em>Web Development</em> for moderne og effektive
+          nettsider, <em>UX/UI Design</em> for brukervennlige opplevelser,
+          <em>Digital Markedsføring</em> for å nå din målgruppe, og
+          <em>Strategi</em> for å optimalisere din digitale tilstedeværelse.
+        </p>
+      </div>
     </div>
   </div>
 </div>
