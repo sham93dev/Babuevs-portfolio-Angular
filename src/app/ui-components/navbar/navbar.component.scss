@@ -1,3 +1,5 @@
+@import "../../../assets/styles/variables";
+
 .dark-mode-switch {
   width: 60px;
   height: 30px;
@@ -62,7 +64,7 @@ input:checked + label {
 
 input:checked + label span {
   transform: translateX(30px);
-  background-color: #24afef;
+  background-color: $dark-mode-cta-green-color-100;
 }
 
 input:checked + label span::before {

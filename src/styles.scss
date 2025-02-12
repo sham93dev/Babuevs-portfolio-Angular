@@ -5,11 +5,92 @@
 
 @import "./assets/styles/styles.scss";
 
+* {
+  transition: background-color 0.2s ease, color 0.1s ease;
+}
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
   font-family: $font-primary !important;
+
+  //Dark mode colors
+  .dark-mode {
+    background-color: $dark-mode-black;
+    color: #ffffff;
+
+    .navbar {
+      background-color: $dark-mode-black-opacity-100 !important;
+    }
+
+    a {
+      color: $dark-mode-white;
+
+      &:hover {
+        color: $dark-mode-cta-green-color-100;
+      }
+    }
+
+    .cv-btn {
+      background-color: $dark-mode-cta-green-color-100 !important;
+    }
+
+    .background-shape {
+      background-color: $dark-mode-cta-green-color-100;
+    }
+
+    .bg-beige {
+      background-color: $dark-mode-black-200 !important;
+    }
+
+    .clients-fill {
+      fill: $dark-mode-black-200 !important;
+    }
+
+    .card {
+      background-color: $dark-mode-black-opacity-100 !important;
+      color: #ffffff;
+      box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .carousel-indicator.active {
+      background: $dark-mode-white !important;
+    }
+
+    .btn {
+      background-color: $dark-mode-white;
+      color: $dark-mode-black;
+      border: 1px solid #444;
+
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    .clients-small-box {
+      background: $gradient-green-black !important;
+    }
+
+    .education-dark {
+      background: $gradient-green-black !important;
+      color: $dark-mode-white !important;
+    }
+
+    .stats-section {
+      background: $dark-mode-black-200;
+      color: $dark-mode-white;
+    }
+
+    footer {
+      background: $dark-mode-black;
+    }
+
+    .footer-btns__linkedin {
+      color: #51a4f9;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 <div class="container-fluid p-0">
   <div class="education"></div>
-  <div class="container d-flex flex-column align-items-baseline">
+  <div class="container d-flex flex-column align-items-baseline education-dark">
     <h1 class="m-5 p-3 fw-medium text-center">{{ sectionTitle }}</h1>
     <div class="education-wrapper" *ngFor="let edu of educationList">
       <img [src]="edu.logo" [ngStyle]="edu.logoStyle" [alt]="edu.altText" />
