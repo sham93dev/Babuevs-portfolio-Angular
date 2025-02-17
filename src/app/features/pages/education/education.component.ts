@@ -24,7 +24,7 @@ export class EducationComponent implements OnInit {
       schoolName: 'Noroff',
       program: 'Frontend-utvikling',
       duration: '08.2019 - 06.2021',
-      logoStyle: { padding: '43px' },
+      logoStyle: { padding: '35px' },
     },
     {
       logo: '../../../../assets/img/education/bilogo.png',

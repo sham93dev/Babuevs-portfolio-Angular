@@ -1,14 +1,16 @@
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 education-holder">
   <div class="education"></div>
   <div class="container d-flex flex-column align-items-baseline education-dark">
     <h1 class="m-5 p-3 fw-medium text-center">{{ sectionTitle }}</h1>
-    <div class="education-wrapper" *ngFor="let edu of educationList">
-      <img [src]="edu.logo" [ngStyle]="edu.logoStyle" [alt]="edu.altText" />
-      <span>
-        <h3 class="m-0">{{ edu.schoolName }}</h3>
-        <h5 class="m-0">{{ edu.program }}</h5>
-        <p class="m-0">{{ edu.duration }}</p>
-      </span>
+    <div class="education-container">
+      <div class="education-wrapper" *ngFor="let edu of educationList">
+        <img [src]="edu.logo" [ngStyle]="edu.logoStyle" [alt]="edu.altText" />
+        <span>
+          <h3 class="m-0">{{ edu.schoolName }}</h3>
+          <h5 class="m-0">{{ edu.program }}</h5>
+          <p class="m-0">{{ edu.duration }}</p>
+        </span>
+      </div>
     </div>
   </div>
 </div>

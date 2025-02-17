@@ -31,8 +31,17 @@ body {
       }
     }
 
+    .navbar-dark .toggler-icon {
+      background-color: $dark-mode-white !important;
+    }
+
     .cv-btn {
       background-color: $dark-mode-cta-green-color-100 !important;
+      color: $dark-mode-white !important;
+
+      &:hover {
+        background-color: $dark-mode-cta-green-color-200 !important;
+      }
     }
 
     .background-shape {
@@ -63,7 +72,7 @@ body {
       border: 1px solid #444;
 
       &:hover {
-        background-color: #444;
+        background-color: #dbdbdb;
       }
     }
 

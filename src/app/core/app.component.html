@@ -8,13 +8,27 @@
   <app-projects></app-projects>
 </section>
 
-<section id="clients">
-  <app-clients></app-clients>
-</section>
+<!-- Dynamisk rekkefølge: Education før Clients på mobil -->
+<ng-container *ngIf="isMobile; else normalOrder">
+  <section id="education">
+    <app-education></app-education>
+  </section>
 
-<section id="education">
-  <app-education></app-education>
-</section>
+  <section id="clients">
+    <app-clients></app-clients>
+  </section>
+</ng-container>
+
+<!-- Normal rekkefølge for desktop -->
+<ng-template #normalOrder>
+  <section id="clients">
+    <app-clients></app-clients>
+  </section>
+
+  <section id="education">
+    <app-education></app-education>
+  </section>
+</ng-template>
 
 <section id="services">
   <app-services></app-services>

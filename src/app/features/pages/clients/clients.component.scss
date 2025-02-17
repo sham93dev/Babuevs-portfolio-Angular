@@ -14,6 +14,14 @@
     margin-left: 3.7rem;
     margin-top: -6rem;
 
+    .clients-decor-line {
+      width: 109px;
+      height: 5px;
+      background-color: $light-mode-cta-green-color-100;
+      margin: 0 0 11px;
+      display: none;
+    }
+
     h3 {
       font-size: $custom-large-font-size;
     }
@@ -39,6 +47,43 @@
 
       img {
         height: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .headings-wrapper {
+    margin-top: 2rem !important;
+    margin-left: 20px !important;
+
+    .clients-decor-line {
+      display: block !important;
+    }
+  }
+
+  h3 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 4.5rem !important;
+  }
+
+  .clients-big-box {
+    flex-direction: column;
+
+    .clients-images {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column !important;
+      margin: 6rem;
+
+      img {
+        height: 90px !important;
+        width: 100% !important;
+        max-width: 150px !important;
+        object-fit: contain !important;
       }
     }
   }
