@@ -62,6 +62,11 @@ body {
       box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2) !important;
     }
 
+    .svg-wrapper {
+      background: $gradient-green-black;
+      margin-top: -2px;
+    }
+
     .carousel-indicator.active {
       background: $dark-mode-white !important;
     }

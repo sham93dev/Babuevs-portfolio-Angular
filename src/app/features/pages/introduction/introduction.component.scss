@@ -55,7 +55,16 @@ h4 {
 
 @media (max-width: 992px) {
   .background-shape {
-    display: none;
+    position: absolute;
+    top: 69%;
+    left: 52%;
+    transform: translate(-50%, -63%);
+    background: #f6f6f6;
+    width: 104%;
+    height: 82%;
+    max-width: fit-content;
+    z-index: -1;
+    animation: morph 8s linear infinite;
   }
 
   .cv-btn {
@@ -82,6 +91,18 @@ h4 {
 }
 
 @media (max-width: 576px) {
+  .background-shape {
+    position: absolute;
+    top: 69% !important;
+    left: 52% !important;
+    transform: translate(-50%, -63%);
+    background: #f6f6f6;
+    width: 1042% !important;
+    height: 82% !important;
+    z-index: -1;
+    animation: morph 8s linear infinite;
+  }
+
   h1 {
     font-size: 1.8rem;
     letter-spacing: 1px;

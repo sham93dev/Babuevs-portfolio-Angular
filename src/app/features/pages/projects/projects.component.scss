@@ -120,26 +120,26 @@ h1 {
   height: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px), (max-width: 768px) {
   .carousel {
-    max-width: 90%; // Gjør karusellen mer kompakt på mobile enheter
+    max-width: 90%;
   }
 
   .card {
-    max-width: 250px; // Mindre kort for mobil
+    max-width: 250px;
     height: auto;
   }
 
   .card-img-container img {
-    height: 250px; // Redusert bildehøyde
+    height: 250px;
   }
 
   .card-body {
-    padding: 0.8rem; // Mindre padding for mer kompakt design
+    padding: 0.8rem;
   }
 
   h1 {
-    font-size: 2.8rem; // Reduserer overskrift på mobil
+    font-size: 2.8rem;
   }
 
   .carousel-indicators {
@@ -163,7 +163,7 @@ h1 {
 
 @media (max-width: 576px) {
   .card {
-    max-width: 240px; // Enda mindre kort på svært små skjermer
+    max-width: 240px;
   }
 
   .card-img-container img {

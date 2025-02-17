@@ -40,6 +40,6 @@ export class AppComponent {
   }
 
   checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768; // Definerer mobilvisning som <= 768px
+    this.isMobile = window.innerWidth <= 768;
   }
 }

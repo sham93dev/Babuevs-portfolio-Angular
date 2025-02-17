@@ -19,7 +19,7 @@ import {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule], // Importerer FontAwesomeModule
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
@@ -94,7 +94,7 @@ export class ProjectsComponent implements OnInit {
 
   chunkProjectsBasedOnScreenSize(): void {
     const screenWidth = window.innerWidth;
-    const chunkSize = screenWidth < 768 ? 1 : 4; // 1 kort per slide på mobil, 4 på desktop
+    const chunkSize = screenWidth < 768 ? 1 : 4;
     this.chunkedProjects = this.chunkArray(this.projects, chunkSize);
   }
 
@@ -104,7 +104,6 @@ export class ProjectsComponent implements OnInit {
       results.push(array.slice(i, i + chunkSize));
     }
 
-    // Hvis siste gruppe har færre enn chunkSize, fyll den opp med tomme objekter for layoutens skyld
     while (results[results.length - 1].length < chunkSize) {
       results[results.length - 1].push({ empty: true });
     }
