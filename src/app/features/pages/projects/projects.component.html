@@ -6,6 +6,7 @@
     class="carousel slide position-relative"
     data-bs-ride="carousel"
   >
+    <!-- Indikatorer -->
     <div class="carousel-indicators">
       <button
         *ngFor="let chunk of chunkedProjects; let i = index"
@@ -14,10 +15,11 @@
         [attr.data-bs-slide-to]="i"
         class="carousel-indicator"
         [class.active]="i === 0"
-        attr.aria-label="Slide {{ i + 1 }}"
+        [attr.aria-label]="'Slide ' + (i + 1)"
       ></button>
     </div>
 
+    <!-- Karusell-innhold -->
     <div class="carousel-inner">
       <div
         *ngFor="let chunk of chunkedProjects; let i = index"
@@ -25,7 +27,10 @@
         [ngClass]="{ active: i === 0 }"
       >
         <div class="row justify-content-center">
-          <div class="col-md-3" *ngFor="let project of chunk">
+          <div
+            class="col-md-3 col-12 d-flex justify-content-center"
+            *ngFor="let project of chunk"
+          >
             <div *ngIf="!project.empty" class="card h-100">
               <div class="card-img-container">
                 <img
@@ -62,6 +67,7 @@
       </div>
     </div>
 
+    <!-- Navigeringsknapper -->
     <button
       class="carousel-control-prev custom-carousel-prev"
       type="button"
@@ -82,4 +88,14 @@
       <span class="visually-hidden">Neste</span>
     </button>
   </div>
+</div>
+<div class="svg-wrapper">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="#f2f7f6"
+      fill-opacity="1"
+      class="clients-fill"
+      d="M0,96L60,101.3C120,107,240,117,360,122.7C480,128,600,128,720,112C840,96,960,64,1080,85.3C1200,107,1320,181,1380,218.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+    ></path>
+  </svg>
 </div>

@@ -54,10 +54,9 @@ export class ProjectsComponent implements OnInit {
     },
     {
       image: './assets/portfolio/wtclogo.png',
-      title: 'WaterCircles Forsikring',
+      title: 'WaterCircles',
       subtitle: 'Min Side',
-      description:
-        'Min side - integrasjon for selskapet WaterCircles Forsikring',
+      description: 'Min side for selskapet WaterCircles Forsikring',
       icons: [
         { icon: faAngular, color: '#E34F26' },
         { icon: faNodeJs, color: '#1572B6' },
@@ -69,7 +68,7 @@ export class ProjectsComponent implements OnInit {
     },
     {
       image: './assets/portfolio/if-prototype.jpg',
-      title: 'IF - Landingsside for App',
+      title: 'IF - Landing for App',
       subtitle: 'Prototype',
       description: 'Potensiell landingsside for tjenestetilbud',
       icons: [
@@ -87,7 +86,16 @@ export class ProjectsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.chunkedProjects = this.chunkArray(this.projects, 4);
+    this.chunkProjectsBasedOnScreenSize();
+    window.addEventListener('resize', () =>
+      this.chunkProjectsBasedOnScreenSize()
+    );
+  }
+
+  chunkProjectsBasedOnScreenSize(): void {
+    const screenWidth = window.innerWidth;
+    const chunkSize = screenWidth < 768 ? 1 : 4; // 1 kort per slide på mobil, 4 på desktop
+    this.chunkedProjects = this.chunkArray(this.projects, chunkSize);
   }
 
   chunkArray(array: any[], chunkSize: number): any[][] {
@@ -96,7 +104,7 @@ export class ProjectsComponent implements OnInit {
       results.push(array.slice(i, i + chunkSize));
     }
 
-    // Hvis siste gruppe har færre enn 4 prosjekter, fyll den opp med tomme objekter for layoutens skyld
+    // Hvis siste gruppe har færre enn chunkSize, fyll den opp med tomme objekter for layoutens skyld
     while (results[results.length - 1].length < chunkSize) {
       results[results.length - 1].push({ empty: true });
     }

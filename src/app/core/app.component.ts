@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IntroductionComponent } from '../features/pages/introduction/introduction.component';
@@ -28,4 +28,18 @@ import { FooterComponent } from '../ui-components/footer/footer.component';
 })
 export class AppComponent {
   title = 'babuevs-portfolio';
+  isMobile: boolean = false;
+
+  constructor() {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    this.isMobile = window.innerWidth <= 768; // Definerer mobilvisning som <= 768px
+  }
 }

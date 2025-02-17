@@ -3,21 +3,54 @@
   [ngClass]="{ 'navbar-dark': isDarkMode, 'bg-dark': isDarkMode }"
 >
   <div class="container-fluid">
+    <!-- Logo -->
     <a class="navbar-brand" href="#home">Babuevs</a>
+
+    <!-- Dark Mode-knapp (til venstre for hamburgeren på mobil, til høyre på stor skjerm) -->
+    <div class="d-flex align-items-center order-1 order-lg-3">
+      <!-- LinkedIn-knapp (kun synlig på store skjermer) -->
+      <a
+        href="https://www.linkedin.com/in/shamil-babujev-1140b7191/"
+        target="_blank"
+        class="d-none d-lg-block me-2"
+      >
+        <i class="fab fa-linkedin fa-lg footer-btns__linkedin"></i>
+      </a>
+
+      <!-- Dark Mode-knapp -->
+      <input
+        type="checkbox"
+        id="darkModeToggle"
+        [checked]="isDarkMode"
+        (change)="toggleDarkMode()"
+        class="form-check-input me-2"
+      />
+      <label for="darkModeToggle" class="dark-mode-switch">
+        <span></span>
+      </label>
+    </div>
+
+    <!-- Hamburger-knapp -->
     <button
-      class="navbar-toggler"
+      class="navbar-toggler order-2 order-lg-2 animated-toggler hidden-mb"
       type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
       aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
+    <!-- Navigasjonsmeny -->
+    <div
+      class="collapse navbar-collapse order-3 order-lg-1 text-center"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav mx-lg-0 mx-auto">
         <li class="nav-item">
           <a class="nav-link" href="#home">Home</a>
         </li>
@@ -29,27 +62,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#services">Tjenester</a>
-        </li>
-      </ul>
-
-      <ul class="navbar-nav ms-auto align-items-center">
-        <a
-          href="https://www.linkedin.com/in/shamil-babujev-1140b7191/"
-          target="_blank"
-        >
-          <i class="fab fa-linkedin fa-lg footer-btns__linkedin"></i>
-        </a>
-        <li class="nav-item mt-1 px-3">
-          <input
-            type="checkbox"
-            id="darkModeToggle"
-            [checked]="isDarkMode"
-            (change)="toggleDarkMode()"
-            class="form-check-input"
-          />
-          <label for="darkModeToggle" class="dark-mode-switch">
-            <span></span>
-          </label>
         </li>
       </ul>
     </div>
