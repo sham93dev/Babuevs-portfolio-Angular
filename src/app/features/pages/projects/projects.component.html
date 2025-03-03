@@ -5,6 +5,7 @@
     id="projectCarousel"
     class="carousel slide position-relative"
     data-bs-ride="carousel"
+    data-ds-interval="7000"
   >
     <div class="carousel-indicators">
       <button
@@ -30,13 +31,33 @@
             *ngFor="let project of chunk"
           >
             <div *ngIf="!project.empty" class="card h-100">
-              <div class="card-img-container">
+              <div class="card-img-container position-relative">
                 <img
                   [src]="project.image"
                   class="card-img-top"
                   alt="Project image"
                 />
-                <div class="hover-overlay">
+
+                <span
+                  *ngIf="project?.comingSoon"
+                  class="badge bg-warning-subtle text-black position-absolute top-0 end-0 m-0 fw-light text-wrap"
+                >
+                  <span class="d-flex gap-1">
+                    <fa-icon class="badge-icon" [icon]="['fas', 'clock']"></fa-icon>
+                    <small>Kommer snart</small> 
+                  </span>
+                </span>
+                <span
+                  *ngIf="project?.onImprovement"
+                  class="badge__improvement improvement bg-warning-subtle text-black position-absolute top-0 end-0 m-0 fw-light text-wrap"
+                >
+                  <span class="d-flex gap-1">
+                    <fa-icon class="badge-icon" [icon]="['fas', 'gear']"></fa-icon>
+                    <small>Under utvikling</small>
+                  </span>
+                </span>
+
+                <div class="hover-overlay" *ngIf="!project?.comingSoon">
                   <a
                     href="{{ project.link }}"
                     target="_blank"
@@ -45,18 +66,24 @@
                   >
                 </div>
               </div>
+
               <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
+                <span class="d-flex flex-column">
+                  <h5 class="card-title mb-0">{{ project.title }}</h5>
+                  <small class="card-text fw-bold mb-2 fs-7">
+                    {{ project.subtitle }}
+                  </small>
+                </span>
                 <small class="card-text">
                   {{ project.description }}
                 </small>
                 <div class="icons d-flex mt-2 gap-2 fs-4">
                   <fa-icon
-                    *ngFor="let iconObj of project.icons"
-                    [icon]="iconObj.icon"
-                    [style.color]="iconObj.color"
-                    class="tech-icon"
-                  ></fa-icon>
+                  *ngFor="let iconObj of project.icons"
+                  [icon]="['fab', iconObj.icon]"
+                  [style.color]="iconObj.color"
+                  class="tech-icon"
+                ></fa-icon>                
                 </div>
               </div>
             </div>
@@ -86,6 +113,7 @@
     </button>
   </div>
 </div>
+
 <div class="svg-wrapper">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path

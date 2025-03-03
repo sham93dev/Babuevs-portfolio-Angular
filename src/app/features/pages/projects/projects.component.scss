@@ -200,3 +200,27 @@ h1 {
     right: -14px;
   }
 }
+
+.badge {
+  font-size: 0.75rem; 
+  padding: 0.3rem 0.6rem;
+  white-space: nowrap; 
+  border-radius: 0px 2px 2px 0px !important;
+
+  &__improvement {
+    background-color:#c5ffd5 !important;
+    font-size: 0.75rem; 
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap; 
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.65rem; 
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+.badge-icon {
+  font-size: .7rem;
+}
+

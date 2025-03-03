@@ -15,22 +15,20 @@ export class NavbarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.isDarkMode = localStorage.getItem('darkMode') === 'true';
+    // Sjekker om bruker har valgt dark mode tidligere
+    const savedTheme = localStorage.getItem('darkMode');
+    this.isDarkMode = savedTheme ? JSON.parse(savedTheme) : false; // Default er Light Mode (false)
+
     if (this.isDarkMode) {
       document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
     }
   }
 
-  toggleDarkMode(): void {
+  toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
-    localStorage.setItem('darkMode', this.isDarkMode.toString());
+    document.body.classList.toggle('dark-mode', this.isDarkMode);
 
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
+    // Lagre brukerens valg i localStorage
+    localStorage.setItem('darkMode', JSON.stringify(this.isDarkMode));
   }
 }
