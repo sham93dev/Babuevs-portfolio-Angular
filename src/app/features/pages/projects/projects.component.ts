@@ -6,7 +6,7 @@ import { IconsModule } from 'src/app/ui-components/icons.module';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, IconsModule], // Bruk IconsModule
+  imports: [CommonModule, FontAwesomeModule, IconsModule], 
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
