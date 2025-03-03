@@ -57,10 +57,18 @@
   .education-holder {
     min-height: auto !important;
   }
+
   .education-dark {
     padding: 0 !important;
     padding-bottom: 20px !important;
     height: fit-content;
+
+    @media (max-width: 768px) {
+      margin: 0;
+      min-width: 100% !important;
+      margin: 0 !important;
+    }
+
   }
 
   .education {

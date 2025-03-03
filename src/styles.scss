@@ -65,6 +65,10 @@ body {
     .svg-wrapper {
       background: $dark-mode-black;
       margin-top: -2px;
+
+      @media (max-width: 768px) {
+        background: $gradient-green-black !important;
+      }
     }
 
     .carousel-indicator.active {
