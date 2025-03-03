@@ -1,19 +1,18 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconsModule } from 'src/app/ui-components/icons.module';
 
-declare var bootstrap: any; 
-
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, IconsModule],
+  imports: [CommonModule, FontAwesomeModule, IconsModule], 
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
-export class ProjectsComponent implements OnInit, AfterViewInit {
-    projects = [
+export class ProjectsComponent implements OnInit {
+  
+  projects = [
     {
       image: './assets/portfolio/holidaze.jpg',
       title: 'Holidaze Bergen',
@@ -114,10 +113,12 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       image: './assets/portfolio/gamlebyen.jpg',
       title: 'Gamlebyen',
       subtitle: 'Nettside for bydel',
-      description: 'Moderne nettside for gamlebyen',
+      description: 'Moderne nettside for gamlebyen i Oslo',
       icons: [
         { icon: 'angular', color: '#E34F26' },
-        { icon: 'node-js', color: '#1572B6' },
+        { icon: 'stripe', color: '#119abf' },
+        { icon: 'bootstrap', color: '#AC26D2' },
+        { icon: 'sass', color: '#ac25d2' },
       ],
       link: null,
       comingSoon: true,
@@ -130,6 +131,9 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       icons: [
         { icon: 'react', color: '#119abf' },
         { icon: 'stripe', color: '#119abf' },
+        { icon: 'stripe', color: '#119abf' },
+        { icon: 'bootstrap', color: '#AC26D2' },
+        { icon: 'sass', color: '#ac25d2' },
       ],
       link: null,
       comingSoon: true,
@@ -142,30 +146,15 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.chunkProjectsBasedOnScreenSize();
-    window.addEventListener('resize', () => this.chunkProjectsBasedOnScreenSize());
-  }
-
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.reinitializeCarousel();
-    }, 500);
+    window.addEventListener('resize', () =>
+      this.chunkProjectsBasedOnScreenSize()
+    );
   }
 
   chunkProjectsBasedOnScreenSize(): void {
     const screenWidth = window.innerWidth;
     const chunkSize = screenWidth < 768 ? 1 : 4;
-
-    const chunked = this.chunkArray(this.projects, chunkSize);
-
-    while (chunked[chunked.length - 1]?.length < chunkSize) {
-      chunked[chunked.length - 1].push({ empty: true });
-    }
-
-    this.chunkedProjects = chunked;
-
-    setTimeout(() => {
-      this.reinitializeCarousel();
-    }, 1000);
+    this.chunkedProjects = this.chunkArray(this.projects, chunkSize);
   }
 
   chunkArray(array: any[], chunkSize: number): any[][] {
@@ -173,24 +162,11 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     for (let i = 0; i < array.length; i += chunkSize) {
       results.push(array.slice(i, i + chunkSize));
     }
-    return results;
-  }
 
-  reinitializeCarousel(): void {
-    const carouselElement = document.querySelector('#projectCarousel');
-    if (carouselElement) {
-
-      const existingCarousel = bootstrap.Carousel.getInstance(carouselElement);
-      if (existingCarousel) {
-        existingCarousel.dispose();
-      }
-      
- 
-      new bootstrap.Carousel(carouselElement, {
-        ride: false,
-        interval: false,
-        wrap: false
-      });
+    while (results[results.length - 1].length < chunkSize) {
+      results[results.length - 1].push({ empty: true });
     }
+
+    return results;
   }
 }
