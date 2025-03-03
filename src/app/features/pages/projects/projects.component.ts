@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconsModule } from 'src/app/ui-components/icons.module';
 
+declare var bootstrap: any; 
+
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, IconsModule], 
+  imports: [CommonModule, FontAwesomeModule, IconsModule],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
-export class ProjectsComponent implements OnInit {
-  
-  projects = [
+export class ProjectsComponent implements OnInit, AfterViewInit {
+    projects = [
     {
       image: './assets/portfolio/holidaze.jpg',
       title: 'Holidaze Bergen',
@@ -141,15 +142,30 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.chunkProjectsBasedOnScreenSize();
-    window.addEventListener('resize', () =>
-      this.chunkProjectsBasedOnScreenSize()
-    );
+    window.addEventListener('resize', () => this.chunkProjectsBasedOnScreenSize());
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.reinitializeCarousel();
+    }, 500);
   }
 
   chunkProjectsBasedOnScreenSize(): void {
     const screenWidth = window.innerWidth;
     const chunkSize = screenWidth < 768 ? 1 : 4;
-    this.chunkedProjects = this.chunkArray(this.projects, chunkSize);
+
+    const chunked = this.chunkArray(this.projects, chunkSize);
+
+    while (chunked[chunked.length - 1]?.length < chunkSize) {
+      chunked[chunked.length - 1].push({ empty: true });
+    }
+
+    this.chunkedProjects = chunked;
+
+    setTimeout(() => {
+      this.reinitializeCarousel();
+    }, 1000);
   }
 
   chunkArray(array: any[], chunkSize: number): any[][] {
@@ -157,11 +173,24 @@ export class ProjectsComponent implements OnInit {
     for (let i = 0; i < array.length; i += chunkSize) {
       results.push(array.slice(i, i + chunkSize));
     }
-
-    while (results[results.length - 1].length < chunkSize) {
-      results[results.length - 1].push({ empty: true });
-    }
-
     return results;
+  }
+
+  reinitializeCarousel(): void {
+    const carouselElement = document.querySelector('#projectCarousel');
+    if (carouselElement) {
+
+      const existingCarousel = bootstrap.Carousel.getInstance(carouselElement);
+      if (existingCarousel) {
+        existingCarousel.dispose();
+      }
+      
+ 
+      new bootstrap.Carousel(carouselElement, {
+        ride: false,
+        interval: false,
+        wrap: false
+      });
+    }
   }
 }
