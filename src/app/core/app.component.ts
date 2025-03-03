@@ -8,6 +8,7 @@ import { ServicesComponent } from '../features/pages/services/services.component
 import { NavbarComponent } from '../ui-components/navbar/navbar.component';
 import { ClientsComponent } from '../features/pages/clients/clients.component';
 import { FooterComponent } from '../ui-components/footer/footer.component';
+import { IconsModule } from '../ui-components/icons.module';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { FooterComponent } from '../ui-components/footer/footer.component';
     ClientsComponent,
     ServicesComponent,
     FooterComponent,
+    IconsModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

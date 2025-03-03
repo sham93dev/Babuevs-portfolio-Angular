@@ -3,34 +3,27 @@
   [ngClass]="{ 'navbar-dark': isDarkMode, 'bg-dark': isDarkMode }"
 >
   <div class="container-fluid">
-    <!-- Logo -->
     <a class="navbar-brand" href="#home">Babuevs</a>
 
-    <!-- Dark Mode-knapp (til venstre for hamburgeren på mobil, til høyre på stor skjerm) -->
-    <div class="d-flex align-items-center order-1 order-lg-3">
-      <!-- LinkedIn-knapp (kun synlig på store skjermer) -->
+    <div class="d-flex align-items-center order-1 order-lg-3 gap-3">
       <a
         href="https://www.linkedin.com/in/shamil-babujev-1140b7191/"
         target="_blank"
-        class="d-none d-lg-block me-2"
+        rel="noopener noreferrer"
+        class="d-none d-lg-block me-2 text-decoration-none"
+        aria-label="Gå til Shamil Babujevs LinkedIn-profil"
       >
-        <i class="fab fa-linkedin fa-lg footer-btns__linkedin"></i>
+        <span class="d-flex gap-1 align-items-center footer-btns__linkedin">
+          <i class="fab fa-linkedin fa-lg"></i>
+          <small>LinkedIn</small>
+        </span>
       </a>
 
-      <!-- Dark Mode-knapp -->
-      <input
-        type="checkbox"
-        id="darkModeToggle"
-        [checked]="isDarkMode"
-        (change)="toggleDarkMode()"
-        class="form-check-input me-2"
-      />
-      <label for="darkModeToggle" class="dark-mode-switch">
-        <span></span>
-      </label>
+      <button (click)="toggleDarkMode()" class="dark-mode-btn me-2">
+        <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+      </button>
     </div>
 
-    <!-- Hamburger-knapp -->
     <button
       class="navbar-toggler order-2 order-lg-2 animated-toggler hidden-mb"
       type="button"
@@ -45,7 +38,6 @@
       <span class="toggler-icon"></span>
     </button>
 
-    <!-- Navigasjonsmeny -->
     <div
       class="collapse navbar-collapse order-3 order-lg-1 text-center"
       id="navbarNav"

@@ -1,84 +1,28 @@
 @import "../../../assets/styles/variables";
 
-.dark-mode-switch {
-  width: 60px;
-  height: 30px;
-  position: relative;
-  display: inline-block;
-  background-color: #ddd;
-  border-radius: 30px;
-  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.1),
-    inset 0px -5px 15px rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.dark-mode-switch::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  transform: translateY(-50%);
-  font-size: 16px;
+.dark-mode-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
   color: #ffcc00;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.dark-mode-switch::after {
-  content: "🌙";
-  display: none;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #666;
-  transition: color 0.3s ease;
+.dark-mode-btn .fa-moon {
+  color: #ddd;
 }
 
-.dark-mode-switch span {
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  background-color: #fff;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  line-height: 22px;
-  font-size: 11px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+.dark-mode-btn .fa-moon:hover {
+  color: $dark-mode-cta-green-color-100 !important;
 }
 
-.dark-mode-switch span::before {
-  content: "☀️";
-  display: block;
-  text-align: center;
-  font-size: 11px;
-}
-
-input:checked + label {
-  background-color: #3a3a3a;
-}
-
-input:checked + label span {
-  transform: translateX(30px);
-  background-color: $dark-mode-cta-green-color-100;
-}
-
-input:checked + label span::before {
-  content: "🌙";
-}
-
-input {
-  width: 0;
-  height: 0;
-  visibility: hidden;
+.dark-mode-btn:hover {
+  opacity: 0.8;
 }
 
 .footer-btns__linkedin {
-  color: #0b65c2;
+  color: $dark-mode-cta-green-color-100;
   &:hover {
     color: #074b8e;
   }
@@ -95,7 +39,7 @@ input {
   justify-content: center;
   align-items: center;
   gap: 6px;
-  z-index: 1051; /* Sørger for at knappen er øverst */
+  z-index: 1051;
 }
 
 .toggler-icon {
@@ -106,7 +50,6 @@ input {
   transition: all 0.3s ease-in-out;
 }
 
-/* Når menyen er åpen */
 .navbar-toggler[aria-expanded="true"] .toggler-icon:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -130,28 +73,6 @@ input {
 
   .navbar-brand {
     margin-left: 1rem;
-  }
-  .dark-mode-switch {
-    width: 30px;
-    height: 15px;
-    font-size: 10px;
-    margin-left: 4.5rem;
-  }
-
-  .dark-mode-switch span {
-    width: 17px;
-    height: 17px;
-    top: -1px;
-    left: -2px;
-    line-height: 18px;
-  }
-
-  .dark-mode-switch span::before {
-    font-size: 9px;
-  }
-
-  input:checked + label span {
-    transform: translateX(16px);
   }
 
   .navbar-collapse {
